@@ -54,7 +54,7 @@ const writeTestTemplate = (componentName, componentFolder, outputFileName) => {
         path.join(__dirname, '../templates') + `/test.template.tsx`,
         'utf8'
     );
-    const testBasePath = path.join('./', config.testFolder);
+    const testBasePath = path.join('./', config.testsFolder);
 
     const testPathArray = componentFolder.split('/');
     const i = testPathArray.indexOf('components');
