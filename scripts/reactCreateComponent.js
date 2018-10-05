@@ -38,7 +38,7 @@ const writeTemplate = (templateName, componentName, componentFolder, outputFileN
     }
     try {
         fs.writeFileSync(`${newPath}/${outputFileName}`, template);
-        console.log('\x1b[32m%s\x1b[0m', `File ${outputFileName} created successfully`);
+        console.log('\x1b[32m%s\x1b[0m', `File ${outputFileName} created successfully in ${newPath}`);
     }
     catch(error) {
         console.log(error);
@@ -68,7 +68,7 @@ const writeTestTemplate = (componentName, componentFolder, outputFileName) => {
         return;
     }
     fs.writeFileSync(`${newPath}/${outputFileName}`, template);
-    console.log('\x1b[32m%s\x1b[0m', `File ${outputFileName} created successfully`);
+    console.log('\x1b[32m%s\x1b[0m', `File ${outputFileName} created successfully in ${newPath}`);
 };
 
 writeTemplate(
