@@ -3,9 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 const defaultConfig = require('../config/default');
+const SCRIPT_PATH = process.cwd();
+
 let userConfig = {};
 try {
-    userConfig = require(path.join(__dirname, '../rcs.config'));
+    userConfig = require(path.join(SCRIPT_PATH, './rcs.config'));
 } catch (e) {}
 
 const config = { ...defaultConfig, ...userConfig };
@@ -16,7 +18,6 @@ const componentName = process.argv[2];
 const componentFolder = process.argv[3] || path.join('../', config.componentsFolder);
 const option = process.argv[4];
 
-const SCRIPT_PATH = process.cwd();
 
 if (!componentName) {
     console.log('Please enter a component name: rcc Header');
@@ -61,7 +62,7 @@ const writeTestTemplate = (componentName, componentFolder, outputFileName) => {
         testBasePath + testPathArray.slice(i + 1, testPathArray.length).join('/') !== ''
             ? testBasePath + '/' + testPathArray.slice(i + 1, testPathArray.length).join('/') 
             : testBasePath;
-    console.log(testPathArray.slice(i + 1, testPathArray.length).join('/'))
+
     template = template.replace(/COMPONENT_NAME/g, componentName);
     template = template.replace(
         /COMPONENT_RELATIVE_PATH/g,
