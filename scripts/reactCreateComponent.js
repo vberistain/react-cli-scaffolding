@@ -2,16 +2,31 @@
 
 const fs = require('fs');
 const path = require('path');
-const componentName = process.argv[2];
-const componentFolder = process.argv[3];
-const option = process.argv[4];
+const defaultConfig = require('../config/default');
+let userConfig = {};
+try {
+    userConfig = require(path.join(__dirname, '../rcs.config'));
+}
+catch(e) {}
+
+const config = {...defaultConfig, ...userConfig};
+
 const mkdirp = require('mkdirp');
 
-const willOverride = option === '-o';
+const componentName = process.argv[2];
+const componentFolder = process.argv[3] || path.join('../', config.componentsFolder) ;
+const option = process.argv[4];
+
+if (!componentName) {
+    console.log('Please enter a component name: rcc Header');
+    process.exit(1);
+}
+
+const willOverride = option === '-o' || config.overrideFiles;
 
 const writeTemplate = (templateName, componentName, componentFolder, outputFileName) => {
     let template = fs.readFileSync(
-        path.join(__dirname, './templates') + `/${templateName}`,
+        path.join(__dirname, '../templates') + `/${templateName}`,
         'utf8'
     );
     template = template.replace(/COMPONENT_NAME/g, componentName);
@@ -32,17 +47,18 @@ const writeTemplate = (templateName, componentName, componentFolder, outputFileN
 
 const writeTestTemplate = (componentName, componentFolder, outputFileName) => {
     let template = fs.readFileSync(
-        path.join(__dirname, './templates') + `/test.template.tsx`,
+        path.join(__dirname, '../templates') + `/test.template.tsx`,
         'utf8'
     );
+    const testBasePath = path.join('../', config.testFolder);
     const testPathArray = componentFolder.split('/');
     const i = testPathArray.indexOf('components');
-    const testPath = 'test/functional/' + testPathArray.slice(i, testPathArray.length).join('/');
+    const testPath = testBasePath + testPathArray.slice(i + 1, testPathArray.length).join('/');
 
     template = template.replace(/COMPONENT_NAME/g, componentName);
     template = template.replace(
         /COMPONENT_RELATIVE_PATH/g,
-        `Components/${testPathArray.slice(i + 1, testPathArray.length).join('/')}/${componentName}`
+        `Components/${testPathArray.slice(i + 1, testPathArray.length).join('/') !== '' ? testPathArray.slice(i + 1, testPathArray.length).join('/') + '/' : ''}${componentName}`
     );
     const newPath = `${path.join(__dirname, `./${testPath}`)}`;
     mkdirp.sync(newPath);
@@ -75,3 +91,5 @@ writeTemplate(
 );
 
 writeTestTemplate(componentName, componentFolder, `${componentName}.test.tsx`);
+
+process.exit(0);
