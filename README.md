@@ -77,7 +77,7 @@ class Footer extends React.Component<Props, State> {
     render() {
         return <div className={styles.container} />;
     }
-};
+}
 
 export default Footer;
 ```
@@ -93,6 +93,7 @@ describe('Footer', () => {
     describe('render', () => {
         it('should render Footer correctly', () => {
             const component = shallow(<Footer />);
+            expect(component.find('div').at(0).getElement()).toBeDefined;
         });
     });
 });

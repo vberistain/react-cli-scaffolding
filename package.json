@@ -1,6 +1,6 @@
 {
     "name": "react-cli-scaffolding",
-    "version": "1.1.8",
+    "version": "1.1.9",
     "description": "Command line tool to automatically create react components",
     "main": "scripts/createReactComponent.js",
     "scripts": {
@@ -11,6 +11,7 @@
     "dependencies": {
         "mkdirp": "^0.5.1"
     },
+    "keywords": ["react", "scaffolding", "typescript", "component"],
     "bin": {
         "rcc": "./scripts/reactCreateComponent.js"
     }

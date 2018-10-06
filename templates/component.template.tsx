@@ -11,6 +11,6 @@ class COMPONENT_NAME extends React.Component<Props, State> {
     render() {
         return <div className={styles.container} />;
     }
-};
+}
 
 export default COMPONENT_NAME;

@@ -6,6 +6,7 @@ describe('COMPONENT_NAME', () => {
     describe('render', () => {
         it('should render COMPONENT_NAME correctly', () => {
             const component = shallow(<COMPONENT_NAME />);
+            expect(component.find('div').at(0).getElement()).toBeDefined;
         });
     });
 });
