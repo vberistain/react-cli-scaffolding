@@ -91,7 +91,7 @@ CSS:
 }
 ```
 
-index:
+Index:
 ```ts
 export { default as Header } from './Header';
 ```
