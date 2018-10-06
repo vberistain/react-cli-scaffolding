@@ -87,7 +87,7 @@ writeTemplate(
     'component.template.tsx',
     componentName,
     `${componentFolder}/${componentName}`,
-    `${componentName}.jsx`
+    `${componentName}.tsx`
 );
 writeTemplate(
     'css.template.css',

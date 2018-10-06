@@ -1,6 +1,6 @@
 # react-cli-scaffolding
 
-> Creates React components from the command line
+> Creates Typescript React components from the command line
 
 ## Install
 
@@ -26,9 +26,22 @@ npm i -g react-cli-scaffolding
 rcc Footer ./src/components/ui/Footer
 ```
 
-![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_ide.png)
-
-![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_test_ide.png)
+```
+project
+└─ src
+│   └─ components
+│       └─ ui
+│           └─ Footer
+│               │ Footer.tsx
+│               │ Footer.css
+│               │ index.ts
+└─ test
+│   └─ functional
+│       └─ components
+│           └─ ui
+│               │ Footer.test.tsx
+└─ rsc.config.js
+```
 
 
 ## Config
