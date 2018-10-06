@@ -11,7 +11,7 @@ npm i -g react-cli-scaffolding
 
 ## API
 
-### rcc ComponentName path
+### rcc
 
 > Creates a new react component, css file, test file, and index.ts file for easier importing in the given directory.
 
@@ -23,7 +23,7 @@ npm i -g react-cli-scaffolding
 **Example**
 
 ```
-npm i -g react-cli-scaffolding
+rcc Footer ./src/components/ui/Footer
 ```
 
 ![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_ide.png
