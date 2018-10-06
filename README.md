@@ -26,9 +26,9 @@ npm i -g react-cli-scaffolding
 rcc Footer ./src/components/ui/Footer
 ```
 
-![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_ide.png
+![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_ide.png)
 
-![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_test_ide.png
+![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_test_ide.png)
 
 
 ## Config
