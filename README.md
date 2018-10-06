@@ -1,12 +1,11 @@
-# "react-cli-scaffolding [![npm version][npmv-img]][npmv-url] [![github release][github-release-img]][github-release-url] [![mit License][license-img]][license-url] [![NPM Downloads Total][downloads-total-img]][npmv-url] 
+# react-cli-scaffolding
 
 > Creates React components from the command line
-
 
 ## Install
 
 ```
-$ npm i -g react-cli-scaffolding
+npm i -g react-cli-scaffolding
 ```
 
 
@@ -24,7 +23,7 @@ $ npm i -g react-cli-scaffolding
 **Example**
 
 ```
-$ npm i -g react-cli-scaffolding
+npm i -g react-cli-scaffolding
 ```
 
 ![alt text](https://raw.githubusercontent.com/vberistain/react-cli-scaffolding/master/img/footer_ide.png
@@ -44,7 +43,6 @@ module.exports = {
     testsFolder: './test/functional/components',
     overrideFiles: true
 };
-
 ```
 
 ## Templates
@@ -68,7 +66,6 @@ class Footer extends React.Component<Props, State> {
 };
 
 export default Footer;
-
 ```
 
 Test:
@@ -85,7 +82,6 @@ describe('Footer', () => {
         });
     });
 });
-
 ```
 
 CSS:
@@ -98,7 +94,6 @@ CSS:
 index:
 ```ts
 export { default as Header } from './Header';
-
 ```
 
 ## Author
