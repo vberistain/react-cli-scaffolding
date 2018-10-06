@@ -102,6 +102,14 @@ writeTemplate(
     'index.ts'
 );
 
+writeTemplate(
+    'css.types.template.d.ts',
+    componentName,
+    `${componentFolder}/${componentName}`,
+    `${componentName}.css.d.ts`
+);
+
+
 writeTestTemplate(componentName, componentFolder, `${componentName}.test.tsx`);
 
 process.exit(0);

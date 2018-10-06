@@ -1,6 +1,6 @@
 # react-cli-scaffolding
 
-> Creates Typescript React components from the command line
+> Creates React components from the command line in Typescript
 
 ## Install
 
@@ -13,7 +13,7 @@ npm i -g react-cli-scaffolding
 
 ### rcc
 
-> Creates a new react component, css file, test file, and index.ts file for easier importing in the given directory.
+> Creates a new tsx React component, css file, types css file, test file, and index.ts file for easier importing in the given directory.
 
 **Params**
 
@@ -35,6 +35,7 @@ project
 │               │ Footer.tsx
 │               │ Footer.css
 │               │ index.ts
+│               │ Footer.css.d.ts
 └─ test
 │   └─ functional
 │       └─ components
@@ -102,6 +103,11 @@ CSS:
 .container {
     display: block;
 }
+```
+
+Type definition CSS:
+```css
+export const container: string;
 ```
 
 Index:
