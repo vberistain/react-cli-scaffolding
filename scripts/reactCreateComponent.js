@@ -90,10 +90,10 @@ writeTemplate(
     `${componentName}.tsx`
 );
 writeTemplate(
-    'css.template.css',
+    'css.template.scss',
     componentName,
     `${componentFolder}/${componentName}`,
-    `${componentName}.css`
+    `${componentName}.scss`
 );
 writeTemplate(
     'index.template.ts',
@@ -106,7 +106,7 @@ writeTemplate(
     'css.types.template.d.ts',
     componentName,
     `${componentFolder}/${componentName}`,
-    `${componentName}.css.d.ts`
+    `${componentName}.scss.d.ts`
 );
 
 
