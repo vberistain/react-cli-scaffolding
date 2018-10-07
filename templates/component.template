@@ -1,11 +1,11 @@
 import * as React from 'react';
-import * as styles from './COMPONENT_NAME.css';
+import * as styles from './%COMPONENT_NAME%.%FILE_EXTENSION%';
 
 type Props = {};
 
 type State = {};
 
-class COMPONENT_NAME extends React.Component<Props, State> {
+class %COMPONENT_NAME% extends React.Component<Props, State> {
     state = {};
 
     render() {
@@ -13,4 +13,4 @@ class COMPONENT_NAME extends React.Component<Props, State> {
     }
 }
 
-export default COMPONENT_NAME;
+export default %COMPONENT_NAME%;
