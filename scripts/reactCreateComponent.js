@@ -26,11 +26,7 @@ const config = getConfig();
 
 const template = new Template(config, COMPONENT_NAME, COMPONENT_FOLDER, config, OPTION);
 
-template.write(
-    'component',
-    `${template.componentName}.${template.config.componentFileExtension}`,
-    config.componentFileExtension
-);
+template.write('component', `${template.componentName}.${template.config.componentFileExtension}`);
 
 template.write('style', `${template.componentName}.${template.config.styleFileExtension}`);
 

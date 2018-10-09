@@ -93,7 +93,8 @@ class Template {
 
         template = this.writeVariables(template, {
             COMPONENT_NAME: this.componentName,
-            FILE_EXTENSION: fileExtension
+            FILE_EXTENSION: fileExtension,
+            STYLE_FILE_EXTENSION: this.config.styleFileExtension
         });
 
         this.writeInFile(template, `${this.componentFolder}/${this.componentName}`, outputFileName);
