@@ -3,3 +3,4 @@ node_modules
 src
 test
 rcs.config.js
+config.js

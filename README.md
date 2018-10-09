@@ -55,7 +55,18 @@ project
 module.exports = {
     componentsFolder: './src/components',
     testsFolder: './test/functional/components',
-    overrideFiles: true
+    // Files will get overridden if they already exist
+    overrideFiles: false,
+    styleFileExtension: 'css',
+    componentFileExtension: 'tsx',
+    // Use custom templates
+    templates: {
+        component: './templates/component.template',
+        style: './templates/style.template',
+        styleTypes: './templates/styletypes.template',
+        index: './templates/index.template',
+        test: './templates/test.template'
+    }
 };
 ```
 
