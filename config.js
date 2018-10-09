@@ -4,7 +4,7 @@ module.exports = {
     overrideFiles: false,
     styleFileExtension: 'css',
     componentFileExtension: 'tsx',
-    templates: {
+    defaultTemplates: {
         component: './templates/component.template',
         style: './templates/style.template',
         styleTypes: './templates/styletypes.template',

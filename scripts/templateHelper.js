@@ -15,14 +15,20 @@ class Template {
 
     get(templateType) {
         try {
+            if (this.config.templates && this.config.templates[templateType]) {
+                return fs.readFileSync(
+                    path.join(process.cwd(), this.config.templates[templateType]),
+                    'utf8'
+                );
+            }
             return fs.readFileSync(
-                path.join(process.cwd(), this.config.templates[templateType]),
+                path.join(__dirname, '../', this.config.defaultTemplates[templateType]),
                 'utf8'
             );
         } catch (error) {
             console.log(
                 '\x1b[31m%s\x1b[0m',
-                `Can't find template ${this.config.templates[templateType]}`
+                `Can't find template ${this.config.defaultTemplates[templateType]}`
             );
             return process.exit(1);
         }
