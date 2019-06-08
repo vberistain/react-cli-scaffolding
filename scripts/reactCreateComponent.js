@@ -30,13 +30,16 @@ template.write('component', `${template.componentName}.${template.config.compone
 
 template.write('style', `${template.componentName}.${template.config.styleFileExtension}`);
 
-template.write('index', 'index.ts');
+template.write('index', config.useTypescript ? 'index.ts' : 'index.js');
 
-template.write(
-    'styleTypes',
-    `${template.componentName}.${template.config.styleFileExtension}.d.ts`
-);
-
-template.writeTest();
+if (config.useTypescript) {
+    template.write(
+        'styleTypes',
+        `${template.componentName}.${template.config.styleFileExtension}.d.ts`
+    );
+}
+if (config.includeTestFile) {
+    template.writeTest();
+}
 
 process.exit(0);

@@ -1,7 +1,9 @@
 module.exports = {
-    componentsFolder: 'src/components',
-    testsFolder: 'test/functional/components',
     overrideFiles: false,
+    useTypescript: true,
+    componentsFolder: 'src/components',
+    includeTestFile: true,
+    testsFolder: 'test/functional/components',
     styleFileExtension: 'css',
     componentFileExtension: 'tsx',
     defaultTemplates: {

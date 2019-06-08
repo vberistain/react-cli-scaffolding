@@ -53,10 +53,12 @@ project
 
 ```js
 module.exports = {
+    useTypescript: true,
     componentsFolder: './src/components',
     testsFolder: './test/functional/components',
     // Files will get overridden if they already exist
     overrideFiles: false,
+    includeTestFile: true,
     styleFileExtension: 'css',
     componentFileExtension: 'tsx',
     // Use custom templates
