@@ -3,6 +3,7 @@ module.exports = {
     useTypescript: true,
     componentsFolder: 'src/components',
     includeTestFile: true,
+    includeIndexFile: true,
     testsFolder: 'test/functional/components',
     styleFileExtension: 'css',
     componentFileExtension: 'tsx',

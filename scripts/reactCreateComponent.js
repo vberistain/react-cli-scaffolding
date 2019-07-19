@@ -23,15 +23,16 @@ if (!COMPONENT_NAME) {
 }
 
 const config = getConfig();
-
-const template = new Template(config, COMPONENT_NAME, COMPONENT_FOLDER, config, OPTION);
+console.log(COMPONENT_FOLDER);
+const template = new Template(config, COMPONENT_NAME, COMPONENT_FOLDER, OPTION);
 
 template.write('component', `${template.componentName}.${template.config.componentFileExtension}`);
 
 template.write('style', `${template.componentName}.${template.config.styleFileExtension}`);
 
-template.write('index', config.useTypescript ? 'index.ts' : 'index.js');
-
+if (config.includeTestFile) {
+    template.write('index', config.useTypescript ? 'index.ts' : 'index.js');
+}
 if (config.useTypescript) {
     template.write(
         'styleTypes',
